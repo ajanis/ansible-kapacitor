@@ -11,9 +11,9 @@ kapacitor_tick_work_dir: "/usr/local/etc/kapacitor/tick"
 kapacitor_tick_script_dest_dir: "{{ kapacitor_tick_work_dir }}/script"
 kapacitor_tick_template_dest_dir: "{{ kapacitor_tick_work_dir }}/template"
 kapacitor_tick_var_dest_dir: "{{ kapacitor_tick_work_dir }}/var"
-kapacitor_tick_script_dir: './tests/files/tick/script'
-kapacitor_tick_template_dir: './tests/files/tick/template'
-kapacitor_tick_var_dir: './tests/files/tick/var'
+kapacitor_tick_script_dir: '{{ role_path }}/test/files/tick/script'
+kapacitor_tick_template_dir: '{{ role_path }}/test/files/tick/template'
+kapacitor_tick_var_dir: '{{ role_path }}/test/files/tick/var'
 kapacitor_hostname: "{{ ansible_hostname }}"
 kapacitor_data_dir: "/var/lib/kapacitor"
 kapacitor_skip_config_overrides: false
@@ -35,7 +35,7 @@ kapacitor_influx:
   - name: "default"
     enabled: false
     default: true
-    urls: ["http://localhost:8086"]
+    urls: [ "{{ telegraf_influxdb_urls|join('","') }}" ]
     username: ""
     password: ""
     ssl-ca: ""
