@@ -35,7 +35,7 @@ kapacitor_influx:
   - name: "default"
     enabled: false
     default: true
-    urls: [ "{{ telegraf_influxdb_urls|join('","') }}" ]
+    urls: '[ "{{ telegraf_influxdb_urls|join(",") }}" ]'
     username: ""
     password: ""
     ssl-ca: ""
