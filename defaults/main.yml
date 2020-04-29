@@ -29,6 +29,8 @@ kapacitor_tasks: [
   #{ id: "example", type: "stream", tick: "{{ kapacitor_tick_dest_dir }}/example.tick", dbrp: "telegraf.autogen", enabled: true },
   #{ id: "example", type: "stream", tick: "{{ kapacitor_tick_dest_dir }}/example.tick", dbrp: "telegraf.autogen", enabled: false },
 ]
+
+
 kapacitor_cluster_join: false
 kapacitor_cluster_leader: ""
 kapacitor_influx:
@@ -59,7 +61,6 @@ kapacitor_http_https_certificate: "/etc/ssl/kapacitor.pem"
 kapacitor_http_https_enabled: false
 kapacitor_http_log_enabled: true
 kapacitor_http_pprof_enabled: false
-kapacitor_http_shared_secret: ""
 kapacitor_http_shutdown_timeout: "10s"
 kapacitor_http_write_tracing: false
 kapacitor_replay_dir: "/var/lib/kapacitor/replay"
