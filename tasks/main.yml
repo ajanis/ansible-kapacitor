@@ -1,7 +1,15 @@
 ---
 - include_tasks: 'install.yml'
+  when:
+    - not kapacitor_containerized
 - include_tasks: 'configure.yml'
 - include_tasks: 'service.yml'
+  when:
+    - not kapacitor_containerized
 - include_tasks: 'tick.yml'
+  when:
+    - not kapacitor_containerized
 - include_tasks: 'cluster.yml'
-  when: kapacitor_cluster_join == true
+  when:
+    - not kapacitor_containerized
+    - kapacitor_cluster_join == true
