@@ -3,3 +3,5 @@
   service:
     name: 'kapacitor'
     state: 'restarted'
+  when:
+    - not grafana_containerized
