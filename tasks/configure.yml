@@ -1,4 +1,15 @@
 ---
+- name: "create kapacitor directories"
+  file:
+    state: directory
+    dest: "{{ item }}"
+    mode: 0777
+  loop:
+    - "{{ kapacitor_data_dir }}"
+    - "{{ kapacitor_tick_work_dir }}"
+    - "{{ kapacitor_tick_script_dest_dir }}"
+    - "{{ kapacitor_tick_template_dest_dir }}"
+    - "{{ kapacitor_config_dir }}"
 - name: "Install configs"
   template:
     src: 'kapacitor.conf.j2'
