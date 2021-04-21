@@ -174,7 +174,7 @@ default-retention-policy = "{{ kapacitor_default_retention_policy }}"
 
 [stats]
   database = "{{ kapacitor_stats_database }}"
-  enabled = {{ kapacitor_stats_enabled| to_json }}
+  enabled = {{ kapacitor_stats_enabled | to_json }}
   retention-policy = "{{ kapacitor_stats_retention_policy }}"
   stats-interval = "{{ kapacitor_stats_stats_interval }}"
   timing-movavg-size = {{ kapacitor_stats_timing_movavg_size | to_json }}
